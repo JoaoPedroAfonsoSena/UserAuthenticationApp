@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            margin-top: 20px; /* Add some top margin for spacing */
+        }
+
+        h1, p {
+            text-align: center; /* Center the text */
+        }
+
+        /* Full-width input fields */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 400px;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        .registerbtn,input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          opacity: 0.9;
+        }
+
+        .signin {
+          background-color: #f1f1f1;
+          text-align: center;
+          width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Register Page</h1>
+        <p>Please fill in this form to Register an Account!</p>
+        <br>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <label for="username"><b>UserName</b></label>
+            {{ form.username }}
+            <label for="email"><b>Email</b></label>
+            {{ form.email }}
+            <label for="psw"><b>Password</b></label>
+            {{ form.password }}
+            {{ form.submit }}
+        </form>
+
+        <div class="container signin">
+            <p>Already have an Account? <a href="{{url_for('login')}}">Login!</a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
